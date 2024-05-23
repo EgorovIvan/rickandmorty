@@ -14,10 +14,12 @@ const totalItems = ref(0);
 
 const currentPage = ref(1);
 
+// Выбор страницы
 const changePage = (page) => {
   currentPage.value = page;
 }
 
+// Фильтры
 const filters = reactive({
   filterByName: '',
   filterByStatus: '',
@@ -29,12 +31,14 @@ const applyChanges = (name, status) => {
   filters.filterByStatus = status;
 }
 
+// Сбросить фильтр
 const resetChanges = () => {
   currentPage.value = 1;
   filters.filterByName = '';
   filters.filterByStatus = '';
 }
 
+// Загрузка первого эпизода карточки
 const fetchItem = async (url, obj) => {
   try {
     const {data} = await axios.get(url);
@@ -42,11 +46,14 @@ const fetchItem = async (url, obj) => {
     firstEpisodeNew.value.push(data.name);
     // При таком методе исчезает после перезагрузки
     obj.firstEpisode = data.name;
+    return obj;
   } catch (err) {
     console.log(err);
   }
+
 }
 
+// Загрузка карточек
 const fetchHeroes = async () => {
   try {
     const params = {
@@ -62,23 +69,23 @@ const fetchHeroes = async () => {
     // Количество страниц
     totalPages.value = data.info.pages;
     totalItems.value = data.info.count;
+
+    // Очищение массива эпизодов
+    firstEpisodeNew.value.splice(0, firstEpisodeNew.value.length);
+
     // Массив карточек на странице
     heroes.value = data.results.map((obj) => {
-          fetchItem(obj.episode[0], obj)
+          fetchItem(obj.episode[0], obj);
           return obj;
         }
     );
-
   } catch (err) {
     console.log(err);
   }
 }
 
-
-onMounted( async () => {
+onMounted(async () => {
   await fetchHeroes();
-
-  // console.log(heroes.value)
 });
 
 watch(currentPage, fetchHeroes);
@@ -115,10 +122,12 @@ watch(filters, fetchHeroes);
   -webkit-box-align: center;
   align-items: center;
 }
+
 .pagination-container {
   display: flex;
   column-gap: 10px;
 }
+
 .paginate-buttons {
   height: 40px;
   width: 40px;
@@ -128,14 +137,17 @@ watch(filters, fetchHeroes);
   border: 1px solid rgb(217, 217, 217);
   color: black;
 }
+
 .paginate-buttons:hover {
   background-color: #d8d8d8;
 }
+
 .active-page {
   background-color: #3498db;
   border: 1px solid #3498db;
   color: white;
 }
+
 .active-page:hover {
   background-color: #2988c8;
 }

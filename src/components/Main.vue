@@ -18,15 +18,13 @@ defineProps({
           :species="hero.species"
           :location="hero.location.name"
           :firstEpisode="firstEpisodeNew[number]"
+
     />
   </div>
 </template>
 
 <style scoped lang="less">
 .main {
-  //position: relative;
-  //display: grid;
-  //grid-template-columns: 1fr 1fr 1fr;
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;

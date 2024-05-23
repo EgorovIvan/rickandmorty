@@ -34,7 +34,7 @@ defineProps({
     </div>
   </div>
 </template>
-
+<!--          :firstEpisode="firstEpisodeNew[number]"-->
 <style scoped lang="less">
 .main {
   &__item {

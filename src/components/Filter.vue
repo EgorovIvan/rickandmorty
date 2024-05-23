@@ -49,13 +49,6 @@ const options = [
   padding: 1.5rem 0px;
   max-width: 1920px;
   height: auto;
-  //position: relative;
-  //display: flex;
-  //align-items: center;
-  //justify-content: start;
-  //gap: 0.75rem;
-  //margin: 0 0 2.875rem 3.125rem;
-  //width: 100%;
 
   &__title {
     padding: 0.375rem 1rem 0.5rem 0;

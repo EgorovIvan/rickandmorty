@@ -8,7 +8,6 @@ html {
 
 body {
   background: #FFF;
-  /*background: rgb(32, 35, 41);*/
   font-variant-ligatures: none;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
@@ -48,18 +47,6 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
-  /*body {*/
-  /*  display: flex;*/
-  /*  place-items: center;*/
-  /*}*/
-
-  /*#app {*/
-  /*  display: grid;*/
-  /*  grid-template-columns: 1fr 1fr;*/
-  /*  padding: 0 2rem;*/
-  /*}*/
-}
 
 .pagination-container {
   display: flex;
