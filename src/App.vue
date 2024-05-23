@@ -27,6 +27,7 @@ const filters = reactive({
 
 // Применить фильтр
 const applyChanges = (name, status) => {
+  currentPage.value = 1;
   filters.filterByName = name;
   filters.filterByStatus = status;
 }
@@ -81,6 +82,7 @@ const fetchHeroes = async () => {
     );
   } catch (err) {
     console.log(err);
+    alert(err.message ? err.message : err);
   }
 }
 
