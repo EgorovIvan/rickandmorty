@@ -1,0 +1,87 @@
+@import './base.css';
+
+html {
+  font: 112.5% / 1.625 -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+body {
+  background: #FFF;
+  /*background: rgb(32, 35, 41);*/
+  font-variant-ligatures: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+  font-weight: 800;
+}
+
+#app {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 1.5rem 0px;
+  background: rgb(39, 43, 51);
+  /*min-height: 100vh;*/
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  /*body {*/
+  /*  display: flex;*/
+  /*  place-items: center;*/
+  /*}*/
+
+  /*#app {*/
+  /*  display: grid;*/
+  /*  grid-template-columns: 1fr 1fr;*/
+  /*  padding: 0 2rem;*/
+  /*}*/
+}
+
+.pagination-container {
+  display: flex;
+  column-gap: 10px;
+}
+.paginate-buttons {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(242, 242, 242);
+  border: 1px solid rgb(217, 217, 217);
+  color: black;
+}
+.paginate-buttons:hover {
+  background-color: #d8d8d8;
+}
+.active-page {
+  background-color: #3498db;
+  border: 1px solid #3498db;
+  color: white;
+}
+.active-page:hover {
+  background-color: #2988c8;
+}
